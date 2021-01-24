@@ -1,0 +1,49 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Description-->
+    <% if (page.description){ %>
+        <meta name="description" content="<%= page.description %>">
+    <% } else if (config.description){ %>
+        <meta name="description" content="<%= config.description %>">
+    <% } else if (page.excerpt){ %>
+        <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
+    <% } else if (page.content){ %>
+        <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+    <% } %>
+
+    <!--Author-->
+    <% if (config.author){ %>
+        <meta name="author" content="<%= config.author %>">
+    <% } %>
+
+    <!-- Title -->
+    <%
+        var title = [];
+        if (page.title) title.push(page.title);
+        if (page.category) title.push(page.category);
+        title.push(config.title);
+    %>
+    <title><%= title.join(' | ') %></title>
+
+    <!-- JS -->
+    <%- js('js/fontawesome/js/all.min.js') %>
+
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
+    <%- css('css/main.css') %>
+    <% if (is_home()) { %>
+    <%- css('css/index.css') %>
+    <% } %>
+    <% if (is_post()) { %>
+    <%- css('css/post.css') %>
+    <% } %>
+    <% if (is_page()) { %>
+    <%- css('css/page.css') %>
+    <% } %>
+    <% if (is_category() || is_tag() || is_archive()) { %>
+    <%- css('css/archive.css') %>
+    <% } %>
+
+</head>

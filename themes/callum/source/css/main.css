@@ -1,0 +1,87 @@
+:root {
+    --base-color:#12D2D7;
+    --accent-color: #FF8014;
+    --dark-grey: #222222;
+    --light-grey: #FAFAFA;
+}
+
+body {
+    display: grid;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+        "nav main"
+        "socials main";    
+    font-family: 'Lato', Sans-Serif;
+    color: var(--dark-grey);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arvo', Serif;
+    color: var(--dark-grey);
+}
+
+a {
+    color: var(--dark-grey);
+}
+
+.content-container {
+    overflow: auto;
+    grid-area: main;
+    margin: 0;
+    padding: 2rem 3rem;
+}
+.content-container h1 {
+    margin: 0;
+}
+nav {
+    background-color: var(--base-color);
+}
+nav ul {
+    margin: 0 auto;
+    padding: 0;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+nav li {
+    margin: 0;
+    display: block;
+    text-align: center;
+}
+nav a {
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1.5rem 1rem;
+}
+nav a:hover {
+    background-color: var(--accent-color)
+}
+footer {
+    background-color: var(--accent-color);
+    grid-area: socials;
+}
+footer ul {
+    margin: 0;    
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    list-style-type: none;
+}
+footer li {
+    margin: 0 auto;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+footer li i:hover {
+    color: var(--accent-color)
+}

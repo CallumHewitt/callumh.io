@@ -1,0 +1,8 @@
+home_heading: 'Default home heading'
+home_paragraph: 'Default home paragraph'
+home_spotlight_text: 'Default spotlight text'
+home_spotlight_url: '#'
+
+links:
+  github:
+  linked_in:

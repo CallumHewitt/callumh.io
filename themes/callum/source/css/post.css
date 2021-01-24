@@ -1,0 +1,9 @@
+.content-container h1 {
+    font-size: 2rem;
+}
+.content-container .content-body {
+    max-width: 60rem;
+}
+img {
+    max-width: 60rem;
+}

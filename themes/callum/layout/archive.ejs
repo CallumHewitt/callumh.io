@@ -1,0 +1,34 @@
+<% let posts=[]; if (page.tag) { site.tags.forEach(function(item) { if(item.name===page.tag) { posts=item.posts.slice();
+    } }); } else if (page.category) { site.categories.forEach((item)=> {
+    if(item.name === page.category) {
+    posts = item.posts.slice();
+    }
+    });
+    } else {
+    posts = site.posts;
+    }
+    %>
+
+    <ul class="archive-grid">
+        <% posts.forEach((post)=> {
+            let cover_image_url = post.path + post.cover_image
+            if (post.cover_image.startsWith('http')) {
+            cover_image_url = post.cover_image
+            }
+            %>
+            <li>
+                <a href="<%- page_url(post.path) %>" aria-label="<%- post.title %>"
+                    style="background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                      ), url(<%- cover_image_url %>)">
+                      <div>
+                          <h3><%- post.title %></h3>
+                          <% if (post.subtitle) { %>
+                            <p><%- post.subtitle %></p> 
+                          <% } %>
+                      </div>                      
+                </a>
+            </li>
+            <% }) %>
+    </ul>
