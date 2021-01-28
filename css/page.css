@@ -1,0 +1,7 @@
+.content-container h1 {
+    font-size: 2rem;
+}
+.content-container .content-body {
+    overflow: auto;
+    max-width: 60rem;
+}

@@ -1,0 +1,73 @@
+.content-container {
+    padding: 1rem;
+    margin: 0;
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;    
+    margin: 0;
+    padding: 0;
+}
+.archive-grid > li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    position: relative;
+}
+.archive-grid > li > a {
+    transition: transform .5s;
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -ms-transition: transform .5s;
+    -o-transition: transform .5s;
+    color: var(--light-grey);
+    text-decoration: none;
+    /*ContentLayout*/
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: center;
+    /*BG*/
+    background: black;
+    background-position: center;
+    background-size: cover;
+    /*Square*/
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.archive-grid > li:focus > a,
+.archive-grid > li:hover > a {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+.archive-grid > li > a > div {
+    padding: 0 2rem;
+}
+.archive-grid > li > a h3 {
+    margin: 0;
+    padding: 0;
+    color: var(--light-grey);
+    text-shadow: 1px 1px var(--dark-grey);
+    font-size: 2rem;
+    font-weight: bold;
+}
+.archive-grid > li > a p {
+    color: var(--light-grey);
+    text-shadow: 1px 1px var(--dark-grey);
+    font-size: 1.12rem;
+    font-weight: bold;
+}
