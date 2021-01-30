@@ -1,9 +1,18 @@
+@supports (display: grid) {
+    @media (min-width: 50rem) {
+        .content-container {
+            position: absolute;
+            top: 25%
+        }
+    }
+}
+
+
 .content-container {
     display: flex;
     flex-flow: column nowrap;
-    position: absolute;
-    top: 25%;
-    padding: 0 3rem;
+    justify-content: center;
+    padding: 3rem 3rem;
 }
 .content-container h1 {
     padding: 0;
