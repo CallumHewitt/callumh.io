@@ -2,7 +2,6 @@
     padding: 1rem;
     margin: 0;
 }
-
 .archive-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -62,7 +61,7 @@
     padding: 0;
     color: var(--light-grey);
     text-shadow: 1px 1px var(--dark-grey);
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: bold;
 }
 .archive-grid > li > a p {
