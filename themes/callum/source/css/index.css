@@ -29,8 +29,10 @@ a.spotlight-button {
     border: 2px solid var(--accent-color);
     font-size: 1.25rem;
     text-decoration: none;
+    color: var(--dark-grey);
     background-color: var(--base-color)
 }
 a.spotlight-button:hover {
+    color: var(--dark-grey);
     background-color: var(--accent-color)
 }

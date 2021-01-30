@@ -1,12 +1,3 @@
-.content-container h1 {
-    font-size: 3rem;
-}
 .content-container .content-body {
     max-width: 60rem;
-    font-size: 1.3rem;
-}
-img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
 }
