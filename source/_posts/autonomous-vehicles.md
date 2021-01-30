@@ -3,9 +3,13 @@ title: Autonomous Vehicles - Lane Merging
 subtitle: University of York final project
 category: projects
 permalink : projects/autonomous-vehicles/
-cover_image: 'https://place-puppy.com/300x600'
+cover_image: 'lane_merging_full.jpg'
 tags:
 show_date: false
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+![An overhead shot of a complex motorway junction](lane_merging.jpg)
+
+In a world with fully autonomous vehicles, we will need to develop strategies for managing complex traffic scenarios. In my final year at university, I worked on a project to augment a simulator designed by researchers from The University of Texas, and compare different lane merging strategies for fully autonomous vehicles.
+
+You can get the full report on my GitHub [here](https://github.com/CallumHewitt/avLaneMergingReport). You can also experiment with the simulator itself [here](https://github.com/CallumHewitt/AVSimulatorProject).

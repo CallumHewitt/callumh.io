@@ -4,4 +4,6 @@ description: ''
 before_categories: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This website is designed to be a hub for personal software projects and ideas. It's a way for me to experiment with different technologies, and share the results from one place.
+
+I will be blogging about the progress of these projects as well as general thoughts on technology [here](/blog/). Each project also has it's own project page [here](/projects/).
