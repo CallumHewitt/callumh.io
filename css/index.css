@@ -1,5 +1,5 @@
 @supports (display: grid) {
-    @media (min-width: 50rem) {
+    @media (min-width: 44rem) {
         .content-container {
             position: absolute;
             top: 25%

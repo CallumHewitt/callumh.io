@@ -77,7 +77,7 @@ footer li i:hover {
     color: var(--accent-color)
 }
 @supports (display: grid) {
-    @media (min-width: 50rem) {
+    @media (min-width: 44rem) {
         body {
             display: grid;
             position: absolute;
@@ -97,12 +97,14 @@ footer li i:hover {
         nav ul {
             flex-flow: column nowrap;
             justify-content: center;
+            overflow: hidden;
         }
         nav li {
             margin: 0;
         }
         footer ul {
             flex-flow: column nowrap;
+            padding: 0.75rem 0;
         }
         footer li {
             padding: 0.5rem 0;
