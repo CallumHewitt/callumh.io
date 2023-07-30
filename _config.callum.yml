@@ -1,8 +1,8 @@
 home_heading: "Hello, I'm Callum"
 home_paragraph: "I'm a London based software engineer"
-home_spotlight_text: 'Projects'
-home_spotlight_url: '/projects/'
+home_spotlight_text: "Projects"
+home_spotlight_url: "/projects/"
 
 links:
-  github: 'https://github.com/CallumHewitt/'
-  linkedin: 'https://www.linkedin.com/in/callum-hewitt-3928b39a/'
+  github: "https://github.com/CallumHewitt/"
+  linkedin: "https://www.linkedin.com/in/callum-hewitt-3928b39a/"
