@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Tag -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Description-->
+    
+        <meta name="description" content="Navigation problemsDuring the pandemic I ran a D&amp;amp;D game for a group of my friends. The game was set in a mythical world where airships would fly b">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Callum Hewitt">
+    
+
+    <!-- Title -->
+    
+    <title>Seam Navigator | callumh.io</title>
+
+    <!-- JS -->
+    
+<script src="/js/fontawesome/js/all.min.js"></script>
+
+
+    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/css/layout.css">
+
+    
+    
+    
+<link rel="stylesheet" href="/css/post.css">
+
+    
+    
+    
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<!-- Navbar Config -->
+
+<body>
+    <nav>
+        <ul>
+            
+                <li><a href="/">HOME</a></li>
+            
+                <li><a href="/about/">ABOUT</a></li>
+            
+                <li><a href="/projects/">PROJECTS</a></li>
+            
+        </ul>
+    </nav>
+    <section class="content-container">
+        <h1>Seam Navigator</h1>
+
+<div class="content-body">
+    <p><img src="/projects/seam-navigator/compass_post.jpg" alt="A photo of an old fashioned compass with a blurred map in the background. Photo by Dunamis Church on Unsplash."></p>
+<h2 id="Navigation-problems"><a href="#Navigation-problems" class="headerlink" title="Navigation problems"></a>Navigation problems</h2><p>During the pandemic I ran a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dungeons_%26_Dragons">D&amp;D game</a> for a group of my friends. The game was set in a mythical world where airships would fly between different floating cities, towns and villages. This world was known as “The Seam”.</p>
+<p>Some of the routes between these towns were well established “chalked” routes lit with lights, whilst others were not as well established. Navigating between these non-established routes was far more dangerous due to the perpetual darkness that covered the world of the Seam. Flying like this was known as flying “through the black”.</p>
+<p>As the game went on, I found that calculating the distances the players were travelling to be pretty time consuming without a tool to do the maths for me. At the same time, I was also interested in trying out React. The result was “<a target="_blank" rel="noopener" href="https://seam-navigator.callumh.io/">Seam Navigator</a>“, a web tool that finds the shortest path between two locations in the Seam.</p>
+<h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><p>The code for this project can be found on my GitHub at <a target="_blank" rel="noopener" href="https://github.com/CallumHewitt/seam-navigator">CallumHewitt&#x2F;seam-navigator</a>.</p>
+<h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><p>I used <a target="_blank" rel="noopener" href="https://react.dev/">React</a> to create the tool as I’d never played with it before and I wanted to learn how it worked. To keep things simpler on the CSS side, I used <a target="_blank" rel="noopener" href="https://getbootstrap.com/">Bootstrap</a> for all of the styling.</p>
+<p>Aside from the taskbar heading, I knew that there would be two main parts to the tool:</p>
+<ul>
+<li>The inputs for the different stops.</li>
+<li>The calculated route.</li>
+</ul>
+<p>This translated to three React components in the final project:</p>
+<ul>
+<li><code>Stop</code>, consisting of a datalist input, a button for deleting the stop and a button to clear the text input.</li>
+<li><code>RouteCard</code>, a bootstrap card containing the route to get between two stops and the distances involved.</li>
+<li><code>Plotter</code>, the parent component containing the stops and route cards.</li>
+</ul>
+<h3 id="Path-Finding"><a href="#Path-Finding" class="headerlink" title="Path Finding"></a>Path Finding</h3><p>The map is defined in a JSON file. It contains two fields:</p>
+<ul>
+<li><code>nodes</code>: An object which has the X, Y and Z co-ordinates for each location in the Seam.</li>
+<li><code>edges</code>: An array of pairs defining the chalked routes between locations.</li>
+</ul>
+<p>The tool needed to support two forms of path calculations. The first method calculates the shortest distance between two locations using chalked routes. I used <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s algorithm</a> to calculate the shortest route, calculating the distances between each node using their relative co-ordinates.</p>
+<p>However, this method doesn’t cover locations that don’t have chalked routes to them. To calculate a path to those locations, the code first finds the chalked route to the node closest to the location using Dijkstra, and then calculates the direct distance to the final location from there.</p>
+<h3 id="Maintaining-State"><a href="#Maintaining-State" class="headerlink" title="Maintaining State"></a>Maintaining State</h3><p>This was my first react project so it took me some experimentation before I found a configuration that I was happy with when it came to maintaining state.</p>
+<p>My original design had the route cards and stops maintain their own state. Each <code>Stop</code> would update it’s state with the selected value, and report the name of a selected node to the <code>Plotter</code> via the <code>onChanged</code> event. Each <code>RouteCard</code> would also do it’s own routing calculations based on the nodes provided.</p>
+<p>However, this proved to be difficult to manage. One critical bug occurred when deleting a <code>Stop</code> from the route if it was in-between two other stops. The route cards would update correctly, calculating the route between the two now-adjacent stops. However, the loop that renders the <code>Stop</code> inputs would be unable to update the content of the stop inputs with the new route locations. This led to the stop at the index of the now-deleted stop rendering the input text for the deleted stop instead of it’s own.</p>
+<p>In the end managing the state of the <code>Stop</code> content and the <code>RouteCard</code> content entirely within the <code>Plotter</code> component fixed this bug and also meant that all of my business logic for calculating the route from a set of stops could be contained within one class instead of three.</p>
+<p>I’m still not sure if this is the best way to manage state in React. There might be more effective patterns but I found that, for this app at least, this approach was a good way of maintaining separation of concerns.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p><img src="/projects/seam-navigator/seam-navigator.png" alt="A screenshot of the final application showing the stops and the route cards"></p>
+<p>The tool is available at <a target="_blank" rel="noopener" href="https://seam-navigator.callumh.io/">seam-navigator.callumh.io</a> for anyone to test out.</p>
+<p>Overall, this was a really fun project that was helped to make the D&amp;D games run more smoothly when it came to navigation. It also taught me a lot about React and in particular about managing state between components. I would definitely be keen to try out react again in the future on some other projects.</p>
+
+</div>
+    </section>
+    <footer>
+        <ul>
+            
+                <li><a href="https://github.com/CallumHewitt/" target="_blank"><i alt="github link" title="github" class="fab fa-fw fa-github"></i></a></li>
+            
+                <li><a href="https://www.linkedin.com/in/callum-hewitt-3928b39a/" target="_blank"><i alt="linkedin link" title="linkedin" class="fab fa-fw fa-linkedin"></i></a></li>
+            
+        </ul>
+    </footer>
+</body>
+
+</html>
