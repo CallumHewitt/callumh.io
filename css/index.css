@@ -27,13 +27,13 @@ a.spotlight-button {
     display: inline-block;
     margin: 1rem 0 0 0;
     padding: 0.7rem 1.1rem;
-    border: 2px solid var(--accent-color);
+    border: 0px solid var(--accent-color);
     font-size: 1.25rem;
     text-decoration: none;
     color: var(--dark-grey);
-    background-color: var(--base-color)
+    background-color: var(--base-color);
 }
 a.spotlight-button:hover {
     color: var(--dark-grey);
-    background-color: var(--accent-color)
+    background-color: var(--accent-color);
 }
