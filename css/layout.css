@@ -81,7 +81,6 @@ footer li a:hover {
         .content-container {
             overflow: auto;
             grid-area: main;
-            padding: 1.5rem;
         }
         nav ul {
             flex-flow: column nowrap;
