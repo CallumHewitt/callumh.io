@@ -27,25 +27,25 @@ a:hover {
   color: var(--accent-color);
 }
 .content-container h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin-bottom: 1rem;
 }
 .content-container h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
 .content-container h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 .content-container p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
 }
 .content-container li {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 .content-container img {
   display: block;
@@ -69,4 +69,23 @@ figure table {
 .code pre {
   margin: 0;
   text-wrap: wrap;
+}
+@supports (display: grid) {
+  @media (min-width: 44rem) {
+    .content-container h1 {
+      font-size: 2rem;
+    }
+    .content-container h2 {
+      font-size: 1.3rem;
+    }
+    .content-container h3 {
+      font-size: 1.1rem;
+    }
+    .content-container p {
+      font-size: 1rem;
+    }
+    .content-container li {
+      font-size: 1rem;
+    }
+  }
 }

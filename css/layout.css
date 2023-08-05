@@ -11,7 +11,7 @@ body {
 .content-container {
     margin: 0;
     flex: 1 0 auto;
-    padding: 2rem;
+    padding: 1.2rem;
 }
 nav {
     background-color: var(--base-color);
@@ -81,6 +81,7 @@ footer li a:hover {
         .content-container {
             overflow: auto;
             grid-area: main;
+            padding: 1.5rem;
         }
         nav ul {
             flex-flow: column nowrap;
