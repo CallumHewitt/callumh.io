@@ -69,8 +69,12 @@
     <h1>Hexo Draft Tags</h1>
 
 <div class="content-body">
-  <p><img src="/projects/hexo-draft-tags/drafts_post.jpg" alt="A draft table with a man&#39;s hand holding a pencil over a piece of draft paper. A metal ruler is in the foreground. Photo by Daniel McCullough on Unsplash."></p>
-<p>I’ve been using <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> to create websites, including this one, for some time. It allows me to write posts in markdown and then have them render into the website automatically.</p>
+  
+  <div class="header-image">
+    <img alt="A draft table with a man's hand holding a pencil over a piece of draft paper. A metal ruler is in the foreground. Photo by Daniel McCullough on Unsplash." src="/projects/hexo-draft-tags/drafts_post.jpg" />
+  </div>
+  
+  <p>I’ve been using <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> to create websites, including this one, for some time. It allows me to write posts in markdown and then have them render into the website automatically.</p>
 <p>Hexo allows for third-parties to create plugin to extend it’s functionality. One feature that I noticed was missing was the ability to hide text from being rendered in production mode if it wasn’t quite completed yet. By default you can mark an entire post as a draft, which means that it will show when running with the <code>--draft</code> option and not in production, but you can’t exclude part of a post.</p>
 <p>To fix this I created <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-draft-tags">hexo-draft-tags</a>, a very small plugin that defines tags to exclude blocks of text from the production rendering of your website.</p>
 <p>For example:</p>

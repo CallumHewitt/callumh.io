@@ -31,37 +31,42 @@ a:hover {
   margin-bottom: 1rem;
 }
 .content-container h2 {
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 .content-container h3 {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
 .content-container p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
 }
 .content-container li {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .content-container img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 figure {
   margin-inline-start: 0;
   margin-inline-end: 0;
 }
+figure table {
+  table-layout: fixed;
+  width: 100%;
+}
 .code {
-  font-size: 1rem;
+  font-size: 0.8rem;
   background-color: #ececec;
   border-left: solid 5px #d4d4d4;
   padding: 0.7rem 2rem 0.7rem 0.7rem;
 }
 .code pre {
-  margin: 0
+  margin: 0;
+  text-wrap: wrap;
 }
