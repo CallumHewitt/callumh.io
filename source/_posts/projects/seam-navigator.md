@@ -11,7 +11,7 @@ show_date: false
 index: 1
 ---
 
-## Navigation problems
+## Context
 
 During the pandemic I ran a [D&D game](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons) for a group of my friends. The game was set in a mythical world where airships would fly between different floating cities, towns and villages. This world was known as "The Seam".
 
@@ -19,11 +19,7 @@ Some of the routes between these towns were well established "chalked" routes li
 
 As the game went on, I found that calculating the distances the players were travelling to be pretty time consuming without a tool to do the maths for me. At the same time, I was also interested in trying out React. The result was "[Seam Navigator](https://seam-navigator.callumh.io)", a web tool that finds the shortest path between two locations in the Seam.
 
-## Development
-
-The code for this project can be found on my GitHub at [CallumHewitt/seam-navigator](https://github.com/CallumHewitt/seam-navigator).
-
-### Layout
+## Layout
 
 I used [React](https://react.dev) to create the tool as I'd never played with it before and I wanted to learn how it worked. To keep things simpler on the CSS side, I used [Bootstrap](https://getbootstrap.com) for all of the styling.
 
@@ -38,7 +34,7 @@ This translated to three React components in the final project:
 - `RouteCard`, a bootstrap card containing the route to get between two stops and the distances involved.
 - `Plotter`, the parent component containing the stops and route cards.
 
-### Path Finding
+## Path Finding
 
 The map is defined in a JSON file. It contains two fields:
 
@@ -49,7 +45,7 @@ The tool needed to support two forms of path calculations. The first method calc
 
 However, this method doesn't cover locations that don't have chalked routes to them. To calculate a path to those locations, the code first finds the chalked route to the node closest to the location using Dijkstra, and then calculates the direct distance to the final location from there.
 
-### Maintaining State
+## Maintaining State
 
 This was my first react project so it took me some experimentation before I found a configuration that I was happy with when it came to maintaining state.
 
@@ -65,6 +61,6 @@ I'm still not sure if this is the best way to manage state in React. There might
 
 ![A screenshot of the final application showing the stops and the route cards](seam-navigator.png)
 
-The tool is available at [seam-navigator.callumh.io](https://seam-navigator.callumh.io) for anyone to test out.
+The tool is available at [seam-navigator.callumh.io](https://seam-navigator.callumh.io) for anyone to test out. The code is also available  on my GitHub at [CallumHewitt/seam-navigator](https://github.com/CallumHewitt/seam-navigator).
 
 Overall, this was a really fun project that was helped to make the D&D games run more smoothly when it came to navigation. It also taught me a lot about React and in particular about managing state between components. I would definitely be keen to try out react again in the future on some other projects.
