@@ -4,12 +4,12 @@ subtitle: Draft content plugin for Hexo
 category: projects
 permalink : projects/hexo-draft-tags/
 cover_image: 'drafts_cover.jpg'
+header_image: 'drafts_post.jpg'
+header_image_alt_text: A draft table with a man's hand holding a pencil over a piece of draft paper. A metal ruler is in the foreground. Photo by Daniel McCullough on Unsplash.
 tags:
 show_date: false
-index: 3
+index: 2
 ---
-
-![A draft table with a man's hand holding a pencil over a piece of draft paper. A metal ruler is in the foreground. Photo by Daniel McCullough on Unsplash.](drafts_post.jpg)
 
 I've been using [Hexo](https://hexo.io/) to create websites, including this one, for some time. It allows me to write posts in markdown and then have them render into the website automatically.
 

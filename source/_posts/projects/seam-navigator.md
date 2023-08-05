@@ -4,12 +4,12 @@ subtitle: 3D Dijkstra React Project
 category: projects
 permalink : projects/seam-navigator/
 cover_image: 'compass_cover.jpg'
+header_image: 'compass_post.jpg'
+header_image_alt_text: A photo of an old fashioned compass with a blurred map in the background. Photo by Dunamis Church on Unsplash.
 tags:
 show_date: false
 index: 1
 ---
-
-![A photo of an old fashioned compass with a blurred map in the background. Photo by Dunamis Church on Unsplash.](compass_post.jpg)
 
 ## Navigation problems
 
