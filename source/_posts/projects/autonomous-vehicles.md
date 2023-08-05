@@ -1,11 +1,12 @@
 ---
 title: Autonomous Vehicles - Lane Merging
-subtitle: University of York final project
+subtitle: University of York final year project
 category: projects
 permalink : projects/autonomous-vehicles/
 cover_image: 'lane_merging_cover.jpg'
 tags:
 show_date: false
+index: 2
 ---
 
 ![An overhead shot of a complex motorway junction. Photo by Denys Nevozhai on Unsplash.](lane_merging_post.jpg)

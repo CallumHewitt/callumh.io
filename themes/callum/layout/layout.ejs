@@ -30,38 +30,39 @@
     navPages = navPages.concat(catPages)
     navPages = navPages.concat(postCatPages)
 %>
+
 <body>
-    <nav>
-        <ul>
-            <% navPages.forEach(function(info) { %>
-                <li><a href="<%- page_url(info.path) %>"><%- info.title %></a></li>
-            <% }) %>
-        </ul>
-    </nav>
-    <section class="content-container">
-        <%- body %>
-    </section>
-    <footer>
-        <ul>
-            <% 
-            keys = Object.keys(theme.links).sort()
-            for (i in keys) { 
-                let key = keys[i]
-                let link = theme.links[key]
-                if (!link) {
-                    continue
-                }
-                let icon = "fas fa-fw fa-address-book"
-                if (key === "github") {
-                    icon = "fab fa-fw fa-github"
-                } else if (key == "linkedin") {
-                    icon = "fab fa-fw fa-linkedin"
-                }               
-            %>
-                <li><a href="<%- link %>" target="_blank"><i alt="<%- key %> link" title="<%- key %>" class="<%- icon %>"></i></a></li>
-            <% } %>
-        </ul>
-    </footer>
+  <nav>
+    <ul>
+      <% navPages.forEach(function(info) { %>
+      <li><a href="<%- page_url(info.path) %>"><%- info.title %></a></li>
+      <% }) %>
+    </ul>
+  </nav>
+  <section class="content-container">
+    <%- body %>
+  </section>
+  <footer>
+    <ul>
+      <% 
+        keys = Object.keys(theme.links).sort()
+        for (i in keys) { 
+            let key = keys[i]
+            let link = theme.links[key]
+            if (!link) {
+                continue
+            }
+            let icon = "fas fa-fw fa-address-book"
+            if (key === "github") {
+                icon = "fab fa-fw fa-github"
+            } else if (key == "linkedin") {
+                icon = "fab fa-fw fa-linkedin"
+            }               
+      %>
+      <li><a href="<%- link %>" target="_blank"><i alt="<%- key %> link" title="<%- key %>" class="<%- icon %>"></i></a></li>
+      <% } %>
+    </ul>
+  </footer>
 </body>
 
 </html>

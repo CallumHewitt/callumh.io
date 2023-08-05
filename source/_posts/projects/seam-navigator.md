@@ -6,6 +6,7 @@ permalink : projects/seam-navigator/
 cover_image: 'compass_cover.jpg'
 tags:
 show_date: false
+index: 1
 ---
 
 ![A photo of an old fashioned compass with a blurred map in the background. Photo by Dunamis Church on Unsplash.](compass_post.jpg)

@@ -15,20 +15,36 @@
   } else {
     posts = site.posts;
   }
+  posts.data.sort((a, b) => {
+    if (a.index && b.index) {
+      return a.index > b.index ? 1 : -1
+    }
+    if (a.index) {
+      return 1
+    }
+    if (b.index) {
+      return -1
+    }
+    if (a.date && b.date) {
+      return a.date > b.date ? 1 : -1
+    }
+    if (a.date) {
+      return 1
+    }
+    if (b.date) {
+      return -1
+    }
+    return 1
+  })
 %>
 
 <ul class="archive-grid">
-  <% posts.forEach((post) => {
-    let cover_image_url = post.path + post.cover_image
-    if (post.cover_image.startsWith('http')) {
-      cover_image_url = post.cover_image
-    }
-  %>
+  <% posts.forEach((post) => { %>
   <li>
     <a href="<%- page_url(post.path) %>" aria-label="<%- post.title %>" style="background-image: linear-gradient(
                         rgba(0, 0, 0, 0.5),
                         rgba(0, 0, 0, 0.5)
-                      ), url(<%- cover_image_url %>)">
+                      ), url(<%- post.cover_image.startsWith('http') ? post.cover_image : post.path + post.cover_image %>)">
       <div>
         <h3><%- post.title %></h3>
         <% if (post.subtitle) { %>
