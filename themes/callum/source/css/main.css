@@ -71,6 +71,10 @@ figure table {
   text-wrap: wrap;
   overflow-wrap: break-word;
 }
+p code {
+  background-color: #ececec;
+  padding: 1px 2px 1px 2px;
+}
 @supports (display: grid) {
   @media (min-width: 44rem) {
     .content-container h1 {
