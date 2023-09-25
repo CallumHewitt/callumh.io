@@ -7,3 +7,4 @@ Static pages for my personal website.
 ### Images sizes
 
 - Cover size minimum: 500 x 500
+- Post size estimate: 1000 x 300
